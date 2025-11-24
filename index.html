@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#2D3748',
+            secondary: '#4A5568',
+            accent: '#667EEA',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+  <header id="header" class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="px-4 py-3 flex items-center justify-between">
+      <button class="text-gray-700">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+      <h1 class="text-lg font-semibold text-gray-800">Bibliothèque</h1>
+      <button class="text-gray-700">
+        <i class="fa-solid fa-magnifying-glass text-xl"></i>
+      </button>
+    </div>
+  </header>
+
+  <section id="language-selector" class="bg-white px-4 py-3 border-b border-gray-200">
+    <div class="flex gap-2 overflow-x-auto pb-1">
+      <button class="px-4 py-2 bg-accent text-white rounded-full text-sm font-medium whitespace-nowrap">
+        <i class="fa-solid fa-globe mr-1"></i> Français
+      </button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+        English
+      </button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+        Español
+      </button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+        Deutsch
+      </button>
+      <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">
+        中文
+      </button>
+    </div>
+  </section>
+
+  <section id="hero-banner" class="bg-gradient-to-br from-indigo-600 to-purple-600 px-4 py-8 text-white">
+    <h2 class="text-2xl font-bold mb-2">Explorez le Savoir</h2>
+    <p class="text-indigo-100 text-sm mb-4">Des milliers de livres, blogs et articles à portée de main</p>
+    <div class="flex gap-2">
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 flex-1 text-center">
+        <div class="text-2xl font-bold">12K+</div>
+        <div class="text-xs text-indigo-100">Livres</div>
+      </div>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 flex-1 text-center">
+        <div class="text-2xl font-bold">8.5K+</div>
+        <div class="text-xs text-indigo-100">Articles</div>
+      </div>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 flex-1 text-center">
+        <div class="text-2xl font-bold">3.2K+</div>
+        <div class="text-xs text-indigo-100">Blogs</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-books" class="px-4 py-6 bg-white">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-semibold text-gray-800">Livres Populaires</h3>
+      <button class="text-accent text-sm font-medium">Voir tout <i
+          class="fa-solid fa-chevron-right text-xs"></i></button>
+    </div>
+    <div class="flex gap-3 overflow-x-auto pb-2">
+      <div class="min-w-[140px] flex-shrink-0">
+        <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-2 flex items-center justify-center">
+          <i class="fa-solid fa-book text-white text-4xl"></i>
+        </div>
+        <h4 class="text-sm font-semibold text-gray-800 mb-1">Le Petit Prince</h4>
+        <p class="text-xs text-gray-500">Antoine de Saint-Exupéry</p>
+        <div class="flex items-center mt-1">
+          <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+          <span class="text-xs text-gray-600 ml-1">4.8 (2.3K)</span>
+        </div>
+      </div>
+      <div class="min-w-[140px] flex-shrink-0">
+        <div
+          class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg mb-2 flex items-center justify-center">
+          <i class="fa-solid fa-book text-white text-4xl"></i>
+        </div>
+        <h4 class="text-sm font-semibold text-gray-800 mb-1">Les Misérables</h4>
+        <p class="text-xs text-gray-500">Victor Hugo</p>
+        <div class="flex items-center mt-1">
+          <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+          <span class="text-xs text-gray-600 ml-1">4.9 (5.1K)</span>
+        </div>
+      </div>
+      <div class="min-w-[140px] flex-shrink-0">
+        <div
+          class="h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-lg mb-2 flex items-center justify-center">
+          <i class="fa-solid fa-book text-white text-4xl"></i>
+        </div>
+        <h4 class="text-sm font-semibold text-gray-800 mb-1">L'Étranger</h4>
+        <p class="text-xs text-gray-500">Albert Camus</p>
+        <div class="flex items-center mt-1">
+          <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+          <span class="text-xs text-gray-600 ml-1">4.7 (3.8K)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories" class="px-4 py-6 bg-gray-50">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Catégories</h3>
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-lightbulb text-yellow-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Sciences</p>
+      </div>
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-palette text-pink-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Arts</p>
+      </div>
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-landmark text-blue-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Histoire</p>
+      </div>
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-heart text-red-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Romance</p>
+      </div>
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-rocket text-purple-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Science-Fiction</p>
+      </div>
+      <div class="bg-white rounded-lg p-4 text-center shadow-sm">
+        <i class="fa-solid fa-graduation-cap text-green-500 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Éducation</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recent-articles" class="px-4 py-6 bg-white">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-semibold text-gray-800">Articles Récents</h3>
+      <button class="text-accent text-sm font-medium">Plus <i class="fa-solid fa-chevron-right text-xs"></i></button>
+    </div>
+
+    <article class="mb-4 pb-4 border-b border-gray-100">
+      <div class="flex gap-3">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <i class="fa-solid fa-newspaper text-white text-xl"></i>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-accent font-medium">TECHNOLOGIE</span>
+          <h4 class="text-sm font-semibold text-gray-800 mt-1 mb-1 line-clamp-2">L'Intelligence Artificielle et l'Avenir
+            de l'Éducation</h4>
+          <p class="text-xs text-gray-500 line-clamp-2 mb-2">Découvrez comment l'IA transforme les méthodes
+            d'apprentissage modernes et révolutionne l'accès au savoir dans le monde entier.</p>
+          <div class="flex items-center text-xs text-gray-400">
+            <i class="fa-regular fa-clock mr-1"></i>
+            <span>Il y a 2 heures</span>
+            <span class="mx-2">•</span>
+            <span>5 min de lecture</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="mb-4 pb-4 border-b border-gray-100">
+      <div class="flex gap-3">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <i class="fa-solid fa-newspaper text-white text-xl"></i>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-accent font-medium">CULTURE</span>
+          <h4 class="text-sm font-semibold text-gray-800 mt-1 mb-1 line-clamp-2">Les Trésors Cachés de la Littérature
+            Française</h4>
+          <p class="text-xs text-gray-500 line-clamp-2 mb-2">Explorez des œuvres méconnues qui ont façonné la culture
+            littéraire française au fil des siècles.</p>
+          <div class="flex items-center text-xs text-gray-400">
+            <i class="fa-regular fa-clock mr-1"></i>
+            <span>Il y a 5 heures</span>
+            <span class="mx-2">•</span>
+            <span>8 min de lecture</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="mb-4">
+      <div class="flex gap-3">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <i class="fa-solid fa-newspaper text-white text-xl"></i>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-accent font-medium">PHILOSOPHIE</span>
+          <h4 class="text-sm font-semibold text-gray-800 mt-1 mb-1 line-clamp-2">Existentialisme et Pensée Moderne</h4>
+          <p class="text-xs text-gray-500 line-clamp-2 mb-2">Une analyse approfondie des courants philosophiques qui
+            influencent notre compréhension du monde contemporain.</p>
+          <div class="flex items-center text-xs text-gray-400">
+            <i class="fa-regular fa-clock mr-1"></i>
+            <span>Hier</span>
+            <span class="mx-2">•</span>
+            <span>12 min de lecture</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="blog-posts" class="px-4 py-6 bg-gray-50">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-semibold text-gray-800">Blogs Populaires</h3>
+      <button class="text-accent text-sm font-medium">Explorer <i
+          class="fa-solid fa-chevron-right text-xs"></i></button>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden mb-3">
+      <div class="h-40 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+        <i class="fa-solid fa-pen-nib text-white text-4xl"></i>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg"
+            class="w-6 h-6 rounded-full object-cover" alt="Author">
+          <span class="text-xs font-medium text-gray-700">Marie Dubois</span>
+          <span class="text-xs text-gray-400">•</span>
+          <span class="text-xs text-gray-400">3 jours</span>
+        </div>
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Voyage à Travers les Mots: L'Art de la Poésie Française
+        </h4>
+        <p class="text-sm text-gray-600 mb-3 line-clamp-3">La poésie française a toujours occupé une place particulière
+          dans le cœur des amoureux de la langue. De Baudelaire à Rimbaud, découvrez comment ces maîtres ont transformé
+          les mots en émotions pures.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4 text-xs text-gray-500">
+            <span><i class="fa-regular fa-heart mr-1"></i>1.2K</span>
+            <span><i class="fa-regular fa-comment mr-1"></i>89</span>
+            <span><i class="fa-regular fa-bookmark mr-1"></i>234</span>
+          </div>
+          <button class="text-accent text-sm font-medium">Lire plus</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden mb-3">
+      <div class="h-40 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+        <i class="fa-solid fa-pen-nib text-white text-4xl"></i>
+      </div>
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg"
+            class="w-6 h-6 rounded-full object-cover" alt="Author">
+          <span class="text-xs font-medium text-gray-700">Jean Laurent</span>
+          <span class="text-xs text-gray-400">•</span>
+          <span class="text-xs text-gray-400">5 jours</span>
+        </div>
+        <h4 class="text-base font-semibold text-gray-800 mb-2">Les Secrets de la Gastronomie Française dans la
+          Littérature</h4>
+        <p class="text-sm text-gray-600 mb-3 line-clamp-3">Comment les grands auteurs français ont célébré la cuisine et
+          la gastronomie à travers leurs œuvres, créant une véritable symphonie culinaire littéraire.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4 text-xs text-gray-500">
+            <span><i class="fa-regular fa-heart mr-1"></i>856</span>
+            <span><i class="fa-regular fa-comment mr-1"></i>67</span>
+            <span><i class="fa-regular fa-bookmark mr-1"></i>178</span>
+          </div>
+          <button class="text-accent text-sm font-medium">Lire plus</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="accordion-section" class="px-4 py-6 bg-white">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Guides de Lecture Détaillés</h3>
+
+    <div class="space-y-3">
+      <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          class="accordion-header w-full px-4 py-3 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition"
+          onclick="toggleAccordion('acc1')">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-book-open text-accent"></i>
+            <span class="text-sm font-semibold text-gray-800">Littérature Classique Française</span>
+          </div>
+          <i id="acc1-icon" class="fa-solid fa-chevron-down text-gray-500 text-sm transition-transform"></i>
+        </button>
+        <div id="acc1" class="accordion-content hidden">
+          <div class="p-4 bg-white border-t border-gray-200">
+            <p class="text-sm text-gray-700 mb-3">La littérature classique française représente l'âge d'or de la
+              création littéraire en France, s'étendant principalement du 17ème au 19ème siècle.</p>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Auteurs Incontournables:</h5>
+            <ul class="space-y-2 mb-3">
+              <li class="text-sm text-gray-600 flex items-start gap-2">
+                <i class="fa-solid fa-circle text-accent text-[6px] mt-1.5"></i>
+                <span><strong>Victor Hugo (1802-1885)</strong> - Maître du romantisme français, auteur des Misérables et
+                  de Notre-Dame de Paris. Ses œuvres explorent les thèmes de la justice sociale et de la condition
+                  humaine.</span>
+              </li>
+              <li class="text-sm text-gray-600 flex items-start gap-2">
+                <i class="fa-solid fa-circle text-accent text-[6px] mt-1.5"></i>
+                <span><strong>Gustave Flaubert (1821-1880)</strong> - Pionnier du réalisme littéraire, célèbre pour
+                  Madame Bovary. Il a révolutionné l'art du roman avec son style précis et détaillé.</span>
+              </li>
+              <li class="text-sm text-gray-600 flex items-start gap-2">
+                <i class="fa-solid fa-circle text-accent text-[6px] mt-1.5"></i>
+                <span><strong>Honoré de Balzac (1799-1850)</strong> - Créateur de La Comédie Humaine, une fresque
+                  monumentale de la société française du 19ème siècle.</span>
+              </li>
+            </ul>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Thèmes Principaux:</h5>
+            <p class="text-sm text-gray-600 mb-2">Les œuvres classiques françaises abordent des thématiques universelles
+              qui résonnent encore aujourd'hui:</p>
+            <ul class="space-y-1 mb-3">
+              <li class="text-sm text-gray-600 pl-4">• L'amour et la passion</li>
+              <li class="text-sm text-gray-600 pl-4">• La critique sociale et politique</li>
+              <li class="text-sm text-gray-600 pl-4">• La condition humaine et l'existentialisme</li>
+              <li class="text-sm text-gray-600 pl-4">• La recherche de l'identité</li>
+            </ul>
+
+            <div class="bg-indigo-50 rounded-lg p-3 mb-3">
+              <p class="text-xs text-gray-700"><strong>Conseil de lecture:</strong> Commencez par des œuvres plus
+                courtes comme "Le Petit Prince" de Saint-Exupéry avant de vous attaquer aux romans plus longs.</p>
+            </div>
+
+            <p class="text-sm text-gray-600">Ces œuvres ont non seulement façonné la littérature française, mais ont
+              également influencé la culture mondiale, inspirant des générations d'écrivains à travers le monde.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          class="accordion-header w-full px-4 py-3 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition"
+          onclick="toggleAccordion('acc2')">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-lightbulb text-accent"></i>
+            <span class="text-sm font-semibold text-gray-800">Philosophie et Pensée Française</span>
+          </div>
+          <i id="acc2-icon" class="fa-solid fa-chevron-down text-gray-500 text-sm transition-transform"></i>
+        </button>
+        <div id="acc2" class="accordion-content hidden">
+          <div class="p-4 bg-white border-t border-gray-200">
+            <p class="text-sm text-gray-700 mb-3">La philosophie française a profondément marqué la pensée occidentale,
+              du siècle des Lumières à l'existentialisme contemporain.</p>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Les Grands Philosophes:</h5>
+            <div class="space-y-3 mb-3">
+              <div class="bg-gray-50 rounded-lg p-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">René Descartes (1596-1650)</h6>
+                <p class="text-sm text-gray-600 mb-2">Père de la philosophie moderne, célèbre pour sa phrase "Je pense,
+                  donc je suis". Il a établi les fondements du rationalisme et de la méthode scientifique.</p>
+                <p class="text-xs text-gray-500 italic">Œuvre majeure: Discours de la Méthode</p>
+              </div>
+
+              <div class="bg-gray-50 rounded-lg p-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">Jean-Paul Sartre (1905-1980)</h6>
+                <p class="text-sm text-gray-600 mb-2">Figure centrale de l'existentialisme, il a exploré la liberté
+                  humaine et la responsabilité individuelle. Son œuvre littéraire et philosophique reste d'une actualité
+                  brûlante.</p>
+                <p class="text-xs text-gray-500 italic">Œuvre majeure: L'Être et le Néant</p>
+              </div>
+
+              <div class="bg-gray-50 rounded-lg p-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">Simone de Beauvoir (1908-1986)</h6>
+                <p class="text-sm text-gray-600 mb-2">Pionnière du féminisme moderne et philosophe existentialiste. Son
+                  analyse de la condition féminine a révolutionné la pensée sociale.</p>
+                <p class="text-xs text-gray-500 italic">Œuvre majeure: Le Deuxième Sexe</p>
+              </div>
+            </div>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Courants Philosophiques:</h5>
+            <ul class="space-y-2 mb-3">
+              <li class="text-sm text-gray-600">
+                <strong>Le Rationalisme:</strong> Priorité à la raison et à la logique dans la quête de la vérité
+              </li>
+              <li class="text-sm text-gray-600">
+                <strong>L'Existentialisme:</strong> L'existence précède l'essence, liberté et responsabilité
+                individuelles
+              </li>
+              <li class="text-sm text-gray-600">
+                <strong>Le Structuralisme:</strong> Analyse des structures sous-jacentes de la pensée et de la société
+              </li>
+            </ul>
+
+            <div class="border-l-4 border-accent pl-3 mb-3">
+              <p class="text-sm text-gray-700 italic">"L'homme est condamné à être libre" - Jean-Paul Sartre</p>
+            </div>
+
+            <p class="text-sm text-gray-600">La philosophie française continue d'influencer les débats contemporains sur
+              l'éthique, la politique, et la condition humaine.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          class="accordion-header w-full px-4 py-3 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition"
+          onclick="toggleAccordion('acc3')">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-theater-masks text-accent"></i>
+            <span class="text-sm font-semibold text-gray-800">Théâtre et Dramaturgie</span>
+          </div>
+          <i id="acc3-icon" class="fa-solid fa-chevron-down text-gray-500 text-sm transition-transform"></i>
+        </button>
+        <div id="acc3" class="accordion-content hidden">
+          <div class="p-4 bg-white border-t border-gray-200">
+            <p class="text-sm text-gray-700 mb-3">Le théâtre français a connu son apogée au 17ème siècle avec le
+              classicisme, établissant des règles qui ont influencé le théâtre mondial.</p>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Les Trois Grands du Classicisme:</h5>
+
+            <div class="mb-3">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-accent font-bold">M</span>
+                </div>
+                <div>
+                  <h6 class="text-sm font-semibold text-gray-800">Molière (1622-1673)</h6>
+                  <p class="text-sm text-gray-600 mb-2">Maître de la comédie, il a créé des personnages immortels qui
+                    ridiculisent les travers de la société.</p>
+                  <div class="bg-blue-50 rounded p-2 mb-2">
+                    <p class="text-xs text-gray-700"><strong>Œuvres majeures:</strong></p>
+                    <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                      <li>• Le Tartuffe - Critique de l'hypocrisie religieuse</li>
+                      <li>• Le Misanthrope - Satire sociale</li>
+                      <li>• L'Avare - Dénonciation de la cupidité</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-accent font-bold">R</span>
+                </div>
+                <div>
+                  <h6 class="text-sm font-semibold text-gray-800">Racine (1639-1699)</h6>
+                  <p class="text-sm text-gray-600 mb-2">Poète tragique par excellence, ses œuvres explorent les passions
+                    humaines avec une intensité inégalée.</p>
+                  <div class="bg-purple-50 rounded p-2 mb-2">
+                    <p class="text-xs text-gray-700"><strong>Tragédies célèbres:</strong></p>
+                    <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                      <li>• Phèdre - L'amour interdit et destructeur</li>
+                      <li>• Andromaque - Le dilemme moral</li>
+                      <li>• Britannicus - La corruption du pouvoir</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-accent font-bold">C</span>
+                </div>
+                <div>
+                  <h6 class="text-sm font-semibold text-gray-800">Corneille (1606-1684)</h6>
+                  <p class="text-sm text-gray-600 mb-2">Créateur de la tragédie classique française, il met en scène
+                    l'héroïsme et le devoir.</p>
+                  <div class="bg-green-50 rounded p-2">
+                    <p class="text-xs text-gray-700"><strong>Chefs-d'œuvre:</strong></p>
+                    <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                      <li>• Le Cid - Honneur et amour</li>
+                      <li>• Horace - Patriotisme et sacrifice</li>
+                      <li>• Cinna - Clémence et pardon</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Les Règles du Classicisme:</h5>
+            <div class="bg-gray-50 rounded-lg p-3 mb-3">
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li><strong>Unité de temps:</strong> L'action se déroule en 24 heures</li>
+                <li><strong>Unité de lieu:</strong> Un seul décor pour toute la pièce</li>
+                <li><strong>Unité d'action:</strong> Une intrigue principale sans digressions</li>
+                <li><strong>Vraisemblance:</strong> Les événements doivent être crédibles</li>
+                <li><strong>Bienséance:</strong> Respect des convenances morales</li>
+              </ul>
+            </div>
+
+            <p class="text-sm text-gray-600">Ces œuvres théâtrales continuent d'être jouées dans le monde entier,
+              témoignant de leur universalité et de leur pertinence intemporelle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          class="accordion-header w-full px-4 py-3 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition"
+          onclick="toggleAccordion('acc4')">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-feather text-accent"></i>
+            <span class="text-sm font-semibold text-gray-800">Poésie Française Moderne</span>
+          </div>
+          <i id="acc4-icon" class="fa-solid fa-chevron-down text-gray-500 text-sm transition-transform"></i>
+        </button>
+        <div id="acc4" class="accordion-content hidden">
+          <div class="p-4 bg-white border-t border-gray-200">
+            <p class="text-sm text-gray-700 mb-3">La poésie française moderne a révolutionné l'art poétique, brisant les
+              conventions pour explorer de nouvelles formes d'expression.</p>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Les Poètes Symbolistes:</h5>
+            <p class="text-sm text-gray-600 mb-3">Le symbolisme, mouvement poétique de la fin du 19ème siècle,
+              privilégie la suggestion et l'évocation plutôt que la description directe.</p>
+
+            <div class="space-y-3 mb-4">
+              <div class="border-l-4 border-purple-400 pl-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">Charles Baudelaire (1821-1867)</h6>
+                <p class="text-sm text-gray-600 mb-2">Auteur des "Fleurs du Mal", il explore la beauté dans le morbide
+                  et le décadent, révolutionnant la conception de la poésie.</p>
+                <div class="bg-purple-50 rounded p-2 text-xs text-gray-700 italic">
+                  "La nature est un temple où de vivants piliers<br>
+                  Laissent parfois sortir de confuses paroles..."<br>
+                  - Correspondances
+                </div>
+              </div>
+
+              <div class="border-l-4 border-blue-400 pl-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">Arthur Rimbaud (1854-1891)</h6>
+                <p class="text-sm text-gray-600 mb-2">Génie précoce qui a cessé d'écrire à 20 ans, il a créé une poésie
+                  visionnaire et hallucinatoire qui annonce le surréalisme.</p>
+                <div class="bg-blue-50 rounded p-2 text-xs text-gray-700 italic">
+                  "Je est un autre"<br>
+                  - Lettre du Voyant
+                </div>
+              </div>
+
+              <div class="border-l-4 border-green-400 pl-3">
+                <h6 class="text-sm font-semibold text-gray-800 mb-1">Paul Verlaine (1844-1896)</h6>
+                <p class="text-sm text-gray-600 mb-2">Maître de la musicalité poétique, il privilégie la suggestion et
+                  l'atmosphère dans des vers d'une grande délicatesse.</p>
+                <div class="bg-green-50 rounded p-2 text-xs text-gray-700 italic">
+                  "Il pleure dans mon cœur<br>
+                  Comme il pleut sur la ville..."<br>
+                  - Romances sans paroles
+                </div>
+              </div>
+            </div>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Le Surréalisme:</h5>
+            <p class="text-sm text-gray-600 mb-2">Mouvement du 20ème siècle qui libère l'imagination et l'inconscient,
+              rejetant la logique rationnelle.</p>
+
+            <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg p-3 mb-3">
+              <p class="text-sm text-gray-700 mb-2"><strong>André Breton (1896-1966)</strong> - Fondateur du surréalisme
+              </p>
+              <p class="text-xs text-gray-600">L'écriture automatique, les associations libres et l'exploration du rêve
+                deviennent les outils de la création poétique.</p>
+            </div>
+
+            <h5 class="text-sm font-semibold text-gray-800 mb-2">Caractéristiques de la Poésie Moderne:</h5>
+            <ul class="space-y-1 text-sm text-gray-600 mb-3">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-accent text-xs mt-1"></i>
+                <span>Liberté formelle et rejet des contraintes classiques</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-accent text-xs mt-1"></i>
+                <span>Exploration de l'inconscient et du symbolisme</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-accent text-xs mt-1"></i>
+                <span>Musicalité et recherche rythmique innovante</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-accent text-xs mt-1"></i>
+                <span>Synesthésie et correspondances sensorielles</span>
+              </li>
+            </ul>
+
+            <p class="text-sm text-gray-600">Cette révolution poétique a profondément influencé non seulement la
+              littérature, mais aussi les arts visuels, la musique et le cinéma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reading-tips" class="px-4 py-6 bg-gray-50">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Conseils de Lecture</h3>
+
+    <div class="bg-white rounded-xl p-4 mb-3 shadow-sm">
+      <div class="flex items-start gap-3 mb-3">
+        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-clock text-blue-600"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-800 mb-1">Gestion du Temps de Lecture</h4>
+          <p class="text-sm text-gray-600 mb-2">Établir une routine de lecture quotidienne est essentiel pour progresser
+            dans vos découvertes littéraires.</p>
+        </div>
+      </div>
+      <div class="space-y-2 text-sm text-gray-600">
+        <p><strong>Matin (15-30 min):</strong> Privilégiez les articles courts ou les poèmes pour stimuler votre esprit
+          en début de journée.</p>
+        <p><strong>Après-midi (20-40 min):</strong> Idéal pour les essais philosophiques ou les blogs qui nécessitent
+          concentration et réflexion.</p>
+        <p><strong>Soir (30-60 min):</strong> Moment parfait pour la fiction, les romans qui vous permettent de vous
+          évader avant le sommeil.</p>
+      </div>
+      <div class="mt-3 bg-blue-50 rounded-lg p-3">
+        <p class="text-xs text-gray-700"><i class="fa-solid fa-lightbulb text-yellow-500 mr-1"></i>
+          <strong>Astuce:</strong> Utilisez la technique Pomodoro - 25 minutes de lecture suivies de 5 minutes de pause
+          pour maintenir votre concentration.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 mb-3 shadow-sm">
+      <div class="flex items-start gap-3 mb-3">
+        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-bookmark text-green-600"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-800 mb-1">Prise de Notes Efficace</h4>
+          <p class="text-sm text-gray-600 mb-2">Maximisez votre compréhension et rétention en adoptant des méthodes de
+            notation structurées.</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div>
+          <h5 class="text-sm font-semibold text-gray-700 mb-1">Méthode Cornell:</h5>
+          <p class="text-sm text-gray-600 mb-2">Divisez votre page en trois sections pour une organisation optimale:</p>
+          <ul class="text-sm text-gray-600 space-y-1 pl-4">
+            <li>• <strong>Colonne gauche:</strong> Mots-clés et questions principales</li>
+            <li>• <strong>Colonne droite:</strong> Notes détaillées pendant la lecture</li>
+            <li>• <strong>Bas de page:</strong> Résumé en vos propres mots</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold text-gray-700 mb-1">Annotations Marginales:</h5>
+          <p class="text-sm text-gray-600">Utilisez des symboles pour marquer rapidement les passages importants:</p>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <div class="bg-gray-50 rounded p-2 text-xs">
+              <span class="font-semibold">★</span> Idée principale
+            </div>
+            <div class="bg-gray-50 rounded p-2 text-xs">
+              <span class="font-semibold">?</span> Question/Doute
+            </div>
+            <div class="bg-gray-50 rounded p-2 text-xs">
+              <span class="font-semibold">!</span> Point important
+            </div>
+            <div class="bg-gray-50 rounded p-2 text-xs">
+              <span class="font-semibold">→</span> À approfondir
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 mb-3 shadow-sm">
+      <div class="flex items-start gap-3 mb-3">
+        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-users text-purple-600"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-800 mb-1">Clubs de Lecture et Discussion</h4>
+          <p class="text-sm text-gray-600">Enrichissez votre expérience de lecture en partageant vos découvertes avec
+            d'autres passionnés.</p>
+        </div>
+      </div>
+      <div class="space-y-2 text-sm text-gray-600 mb-3">
+        <p><strong>Avantages des discussions littéraires:</strong></p>
+        <ul class="space-y-1 pl-4">
+          <li>• Découvrir de nouvelles perspectives et interprétations</li>
+          <li>• Approfondir votre compréhension des thèmes complexes</li>
+          <li>• Maintenir votre motivation et régularité de lecture</li>
+          <li>• Élargir vos horizons littéraires grâce aux recommandations</li>
+        </ul>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-3">
+        <p class="text-xs text-gray-700 mb-2"><strong>Comment organiser votre club:</strong></p>
+        <ul class="text-xs text-gray-600 space-y-1">
+          <li>1. Choisissez un livre par mois avec le groupe</li>
+          <li>2. Définissez des sections de lecture hebdomadaires</li>
+          <li>3. Préparez des questions de discussion à l'avance</li>
+          <li>4. Créez un espace de partage en ligne entre les réunions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 shadow-sm">
+      <div class="flex items-start gap-3 mb-3">
+        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-brain text-orange-600"></i>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-800 mb-1">Techniques de Mémorisation</h4>
+          <p class="text-sm text-gray-600">Améliorez votre rétention des informations avec ces stratégies éprouvées.</p>
+        </div>
+      </div>
+      <div class="space-y-3 text-sm text-gray-600">
+        <div>
+          <h5 class="font-semibold text-gray-700 mb-1">Répétition Espacée:</h5>
+          <p class="mb-2">Révisez le contenu selon ces intervalles pour une mémorisation optimale:</p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="bg-orange-50 px-3 py-1 rounded-full text-xs">Jour 1</span>
+            <span class="bg-orange-50 px-3 py-1 rounded-full text-xs">Jour 3</span>
+            <span class="bg-orange-50 px-3 py-1 rounded-full text-xs">Jour 7</span>
+            <span class="bg-orange-50 px-3 py-1 rounded-full text-xs">Jour 14</span>
+            <span class="bg-orange-50 px-3 py-1 rounded-full text-xs">Mois 1</span>
+          </div>
+        </div>
+        <div>
+          <h5 class="font-semibold text-gray-700 mb-1">Méthode Feynman:</h5>
+          <ol class="space-y-1 pl-4">
+            <li>1. Expliquez le concept comme à un enfant de 10 ans</li>
+            <li>2. Identifiez les lacunes dans votre compréhension</li>
+            <li>3. Retournez au texte source pour combler ces lacunes</li>
+            <li>4. Simplifiez et créez des analogies mémorables</li>
+          </ol>
+        </div>
+        <div>
+          <h5 class="font-semibold text-gray-700 mb-1">Cartes Mentales:</h5>
+          <p>Créez des diagrammes visuels pour connecter les idées et concepts clés. Cette approche visuelle facilite la
+            mémorisation et la compréhension globale des œuvres complexes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="multilingual-content" class="px-4 py-6 bg-white">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Contenu Multilingue</h3>
+
+    <div class="space-y-3">
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
+        <div class="flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-language text-blue-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Français</h4>
+        </div>
+        <p class="text-sm text-gray-700 mb-2">Explorez la richesse de la langue française à travers ses plus belles
+          œuvres littéraires. De Molière à Camus, découvrez comment les mots façonnent la pensée et l'émotion.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">2,450 livres</span>
+          <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">1,820 articles</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-4 border border-red-100">
+        <div class="flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-language text-red-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">English</h4>
+        </div>
+        <p class="text-sm text-gray-700 mb-2">Dive into the vast world of English literature, from Shakespeare's
+          timeless plays to contemporary novels that shape modern thought and culture.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs">3,680 books</span>
+          <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs">2,940 articles</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border border-yellow-100">
+        <div class="flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-language text-orange-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Español</h4>
+        </div>
+        <p class="text-sm text-gray-700 mb-2">Sumérgete en la literatura española y latinoamericana, desde Cervantes
+          hasta García Márquez, explorando la magia del realismo y la poesía hispana.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">2,150 libros</span>
+          <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">1,560 artículos</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-4 border border-gray-200">
+        <div class="flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-language text-gray-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Deutsch</h4>
+        </div>
+        <p class="text-sm text-gray-700 mb-2">Entdecken Sie die deutsche Literatur von Goethe bis Kafka, eine Reise
+          durch philosophisches Denken und literarische Meisterwerke.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs">1,890 Bücher</span>
+          <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs">1,240 Artikel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="px-4 py-6 bg-gray-50">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Ressources Complémentaires</h3>
+
+    <div class="space-y-3">
+      <div class="bg-white rounded-lg p-4 shadow-sm">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fa-solid fa-headphones text-purple-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Livres Audio</h4>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">Écoutez vos œuvres préférées en format audio, parfait pour les
+          déplacements ou les moments de détente.</p>
+        <button
+          class="w-full bg-purple-50 text-purple-700 py-2 rounded-lg text-sm font-medium hover:bg-purple-100 transition">
+          Parcourir la Collection Audio
+        </button>
+      </div>
+
+      <div class="bg-white rounded-lg p-4 shadow-sm">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fa-solid fa-video text-red-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Vidéos Éducatives</h4>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">Analyses littéraires, biographies d'auteurs et discussions thématiques en
+          format vidéo.</p>
+        <button class="w-full bg-red-50 text-red-700 py-2 rounded-lg text-sm font-medium hover:bg-red-100 transition">
+          Voir les Vidéos
+        </button>
+      </div>
+
+      <div class="bg-white rounded-lg p-4 shadow-sm">
+        <div class="flex items-center gap-3 mb-2">
+          <i class="fa-solid fa-pen-to-square text-green-600 text-xl"></i>
+          <h4 class="text-sm font-semibold text-gray-800">Exercices Interactifs</h4>
+        </div>
+        <p class="text-sm text-gray-600 mb-3">Testez votre compréhension avec des quiz, analyses de texte et exercices
+          d'écriture créative.</p>
+        <button
+          class="w-full bg-green-50 text-green-700 py-2 rounded-lg text-sm font-medium hover:bg-green-100 transition">
+          Commencer les Exercices
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="px-4 py-6 bg-white mb-20">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Communauté de Lecteurs</h3>
+
+    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-6 text-white text-center mb-4">
+      <i class="fa-solid fa-users text-4xl mb-3"></i>
+      <h4 class="text-lg font-bold mb-2">Rejoignez 50,000+ Lecteurs</h4>
+      <p class="text-sm text-indigo-100 mb-4">Partagez vos découvertes, participez aux discussions et développez votre
+        passion pour la lecture.</p>
+      <button
+        class="bg-white text-indigo-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-indigo-50 transition">
+        Créer un Compte Gratuit
+      </button>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <div class="bg-gray-50 rounded-lg p-4 text-center">
+        <i class="fa-solid fa-comments text-blue-600 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Forums de Discussion</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-4 text-center">
+        <i class="fa-solid fa-trophy text-yellow-600 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Défis de Lecture</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-4 text-center">
+        <i class="fa-solid fa-star text-purple-600 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Critiques & Notes</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-4 text-center">
+        <i class="fa-solid fa-share-nodes text-green-600 text-2xl mb-2"></i>
+        <p class="text-xs font-medium text-gray-700">Partage Social</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3">
+    <div class="flex items-center justify-around">
+      <button class="flex flex-col items-center gap-1 text-accent">
+        <i class="fa-solid fa-house text-xl"></i>
+        <span class="text-xs font-medium">Accueil</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-gray-400">
+        <i class="fa-solid fa-compass text-xl"></i>
+        <span class="text-xs font-medium">Explorer</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-gray-400">
+        <i class="fa-solid fa-bookmark text-xl"></i>
+        <span class="text-xs font-medium">Favoris</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-gray-400">
+        <i class="fa-solid fa-user text-xl"></i>
+        <span class="text-xs font-medium">Profil</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
